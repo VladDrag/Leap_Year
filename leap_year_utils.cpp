@@ -4,17 +4,17 @@
 std::string GetInput(){
 	std::string number;
 	if (!(std::cin >> number))
-		throw "Input could not be taken!";
+		throw "Input could not be taken!\n";
 	return (number);
 }
 
 void InputChecker(std::string input)
 {
 	if (input.empty())
-		std::cout << "Please choose another year, larger than 999!";
+		std::cerr << "Please choose another year, larger than 999!";
 	else if (input == "exit")
 	{
-		std::cout <<"Thank you for checking our program. Closing program.\n";
+		std::cerr <<"Thank you for checking our program. Closing program.\n";
 		exit(0);
 	}
 }
@@ -37,7 +37,7 @@ bool YearChecker(int year)
 		return (false);
 	if (year < 1000)
     {
-      std::cout << "Please choose another year, larger than 999!\n";
+      std::cerr << "Please choose another year, larger than 999!\n";
       return (false);
     }
 	return (true);
